@@ -43,11 +43,11 @@ dbConnect()
       if (!isValidObjectId(id)) {
         return c.json("Invalid Id", 400);
       }
-      const doc2 = FavYoutubeModal.findById(id);
+      const doc2 = await FavYoutubeModal.findById(id);
       if (!doc2) {
         return c.json("Document not found", 404);
       }
-      return c.json(doc2, 200);
+      return c.json(doc2.toObject(), 200);
     });
 
     app.get("/d/:documentId", async (c) => {
