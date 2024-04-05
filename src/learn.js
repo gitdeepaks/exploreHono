@@ -32,7 +32,7 @@ app.get("/videos", async (c) => {
   });
 });
 
-// ?Read By Id
+// Read By Id
 app.get("/videos/:id", (c) => {
   const { id } = c.req.param();
   const video = videos.find((video) => video.id === id);
